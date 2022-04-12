@@ -1,5 +1,6 @@
-#ifndef TENSAY_H
-#define TENSAY_H
+#ifndef TENSAYAME_H
+#define TENSAYAME_H
+
 
 char _putchar(char c);
 void print_alphabet(void);
