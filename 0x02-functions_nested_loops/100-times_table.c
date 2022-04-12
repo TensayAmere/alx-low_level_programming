@@ -1,4 +1,5 @@
 #include "main.h"
+#include "main_0.c"
 /**
  * print_times_table - Entry point
  * @n: input
