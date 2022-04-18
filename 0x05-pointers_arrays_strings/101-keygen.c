@@ -8,7 +8,7 @@ int main(void)
 {
 int num;
  srand(time(0));
-  num = rand()
+  num = rand();
 printf("%s\n",  num);
 return (0);
 }
