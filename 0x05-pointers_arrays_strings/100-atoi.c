@@ -1,17 +1,26 @@
 #include "main.h"
-
+#include <stdio.h>
 /**
- * swap_int - check the code for Holberton School students.
- * @a: is a pointer int type
- * @b: is a pointer int type
+ * _atoi - check the code for Holberton School students.
+ * @s: pointer char type
  * Return: Always 0.
  */
-
-void swap_int(int *a, int *b)
+int _atoi(char *s)
 {
-int c;
+int negative = 1, i = 0;
+unsigned int numero = 0;
 
-c = *a;
-*a = *b;
-*b = c;
+for (i = 0; s[i] != '\0'; i++)
+{
+if (s[i] == '-')
+negative *= -1;
+
+else if (s[i] >= 0 + '0' && s[i] < 10 + '0')
+numero = numero * 10 + (s[i] - '0');
+
+else if (s[i - 1] >= 0 + '0' && s[i - 1] < 10 + '0')
+break;
+}
+
+return (numero *negative);
 }
