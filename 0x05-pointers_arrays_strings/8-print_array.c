@@ -1,21 +1,25 @@
 #include "main.h"
 #include <stdio.h>
 /**
- * _strcpy - check the code for Holberton School students.
- * @dest: pointer char type
- * @src: pointer char type
+ * print_array - check the code for Holberton School students.
+ * @a: pointer int type
+ * @n: is a int variable
  * Return: Always 0.
  */
-char *_strcpy(char *dest, char *src)
+void print_array(int *a, int n)
 {
-int i;
-for (i = 0; *src != '\0'; i++)
+int i, inte;
+
+for (i = 0; i < n; i++)
 {
-dest[i] = *src;
-src++;
+
+inte = *(a + i);
+
+printf("%d", inte);
+
+if (i != n - 1)
+printf(", ");
 }
 
-dest[i++] = *src;
-
-return (dest);
+printf("\n");
 }
