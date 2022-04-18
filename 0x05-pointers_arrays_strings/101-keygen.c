@@ -8,7 +8,8 @@
  */
 int main(void)
 {
-char seed[53] = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ";
+ 
+char seed[53];
 char password[22];
 int i, n, passw, complem;
 
