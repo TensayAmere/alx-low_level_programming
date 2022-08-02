@@ -1,34 +1,47 @@
+/*
+ * File: 8-delete_dnodeint.c
+ * Auth: Brennan D Baraban
+ */
+
 #include "lists.h"
+
 /**
- * delete_dnodeint_at_index - deletes the node at index od a DLL
- * @head: double pointer to the head of the list
- * @index: the node that should be delete
- * Return: 1 if it succeeded or -1 if it failed
+ * delete_dnodeint_at_index - Deletes a node from a dlistint_t
+ *                            at a given index.
+ * @head: A pointer to the head of the dlistint_t.
+ * @index: The index of the node to delete.
+ *
+ * Return: Upon success - 1.
+ *         Otherwise - -1.
  */
 int delete_dnodeint_at_index(dlistint_t **head, unsigned int index)
 {
-	dlistint_t *aux_head = *head;
+	dlistint_t *tmp = *head;
 
 	if (*head == NULL)
 		return (-1);
-	while (index > 0)
+
+	for (; index != 0; index--)
 	{
-		if (aux_head == NULL)
+		if (tmp == NULL)
 			return (-1);
-		aux_head = aux_head->next;
-		index--;
+		tmp = tmp->next;
 	}
-	if (aux_head == *head)
+
+	if (tmp == *head)
 	{
-		*head = aux_head->next;
-		(*head)->prev = NULL;
+		*head = tmp->next;
+		if (*head != NULL)
+			(*head)->prev = NULL;
 	}
+
 	else
 	{
-		aux_head->prev->next = aux_head->next;
-		if (aux_head->next)
-			aux_head->next->prev = aux_head->prev;
+		tmp->prev->next = tmp->next;
+		if (tmp->next != NULL)
+			tmp->next->prev = tmp->prev;
 	}
-	free(aux_head);
+
+	free(tmp);
 	return (1);
 }
